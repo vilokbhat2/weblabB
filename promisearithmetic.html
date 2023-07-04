@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      async function add(a, b) {
+        // Create a promise that will be resolved with the result of the addition
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // Calculate the addition
+            var result = a + b;
+      
+            // Resolve the promise with the result
+            resolve(result);
+          }, 1000);
+        });
+      }
+      
+      async function subtract(a, b) {
+        // Create a promise that will be resolved with the result of the subtraction
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // Calculate the subtraction
+            var result = a - b;
+      
+            // Resolve the promise with the result
+            resolve(result);
+          }, 1000);
+        });
+      }
+      
+      async function multiply(a, b) {
+        // Create a promise that will be resolved with the result of the multiplication
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // Calculate the multiplication
+            var result = a * b;
+      
+            // Resolve the promise with the result
+            resolve(result);
+          }, 1000);
+        });
+      }
+      
+      async function divide(a, b) {
+        // Create a promise that will be resolved with the result of the division
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // Calculate the division
+            var result = a / b;
+      
+            // Resolve the promise with the result
+            resolve(result);
+          }, 1000);
+        });
+      }
+      
+      async function main() {
+        // Get the numbers from the user
+        var a = +prompt("Enter the first number: ");
+        var b = +prompt("Enter the second number: ");
+      
+        // Add the numbers
+        var additionResult = await add(a, b);
+      
+        // Subtract the numbers
+        var subtractionResult = await subtract(a, b);
+      
+        // Multiply the numbers
+        var multiplicationResult = await multiply(a, b);
+      
+        // Divide the numbers
+        var divisionResult = await divide(a, b);
+      
+        // Display the results
+        document.write("Addition: " + additionResult);
+        document.write("Subtraction: " + subtractionResult);
+        document.write("Multiplication: " + multiplicationResult);
+        document.write("Division: " + divisionResult);
+      }
+      
+      main();
+
+    </script>
+  </body>
+</html>
+
+
+
+
+  

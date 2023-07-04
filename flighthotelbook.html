@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // Function to book a flight
+function bookFlight() {
+    return new Promise(function(resolve, reject) {
+      // Simulating asynchronous flight booking process
+      setTimeout(function() {
+        // Assume the flight booking is successful
+        resolve("Flight booked successfully<br>");
+      }, 2000);
+    });
+  }
+  
+  // Function to book a hotel
+  function bookHotel() {
+    return new Promise(function(resolve, reject) {
+      // Simulating asynchronous hotel booking process
+      setTimeout(function() {
+        // Assume the hotel booking is successful
+        resolve("Hotel booked successfully");
+      }, 1500);
+    });
+  }
+  
+  // Book a flight first, then book a hotel
+  bookFlight()
+    .then(function(flightBookingStatus) {
+      document.write(flightBookingStatus);
+      return bookHotel();
+    })
+    .then(function(hotelBookingStatus) {
+      document.write(hotelBookingStatus);
+    })
+    .catch(function(error) {
+      document.write("Error:", error);
+    });
+  
+        </script>
+    </body>
+</html>
