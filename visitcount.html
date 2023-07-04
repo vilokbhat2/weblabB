@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visitor Counter</title>
+  <script>
+    function incrementCount() {
+      let count = localStorage.getItem('visitorCount');
+      if (count === null) {
+        count = 0;
+      }
+      count++;
+      localStorage.setItem('visitorCount', count);
+      document.getElementById('visitorCount').innerText = count;
+    }
+
+    function initCount() {
+      let count = localStorage.getItem('visitorCount');
+      if (count === null) {
+        count = 0;
+      }
+      document.getElementById('visitorCount').innerText = count;
+    }
+  </script>
+</head>
+<body onload="initCount()">
+  <h1>Welcome to My Website</h1>
+ <hr>
+  <p>Total Visitors: <span id="visitorCount"></span></p>
+  <script>
+    incrementCount();
+  </script>
+</body>
+</html>
